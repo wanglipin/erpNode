@@ -2,7 +2,7 @@ const mysql = require('mysql')
 const { MYSQL_CONFIG } = require('../config/db')
 
 // 创建链接对象
-const con = mysqlcreateConnection(MYSQL_CONFIG)
+const con = mysql.createConnection(MYSQL_CONFIG)
 
 // 开始链接
 con.connect();

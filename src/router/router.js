@@ -6,24 +6,6 @@ const router = express.Router()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Mock
 // router.get('/login', function (req, res) {
 //   fs.readFile('./db.json', 'utf8', function (err, data) {

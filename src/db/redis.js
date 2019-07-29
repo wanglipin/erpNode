@@ -3,6 +3,7 @@ const { REDIS_CONFIG } = require('../config/db')
 
 // 创建链接
 const redisClient = redis.createClient(REDIS_CONFIG.port, REDIS_CONFIG.host)
+// console.log(redisClient)
 redisClient.on('error', err => {
   console.error(err)
 })
@@ -38,6 +39,7 @@ function get (key) {
 }
 
 module.exports = {
+  redisClient,
   set,
   get
 }
