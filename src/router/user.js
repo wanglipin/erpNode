@@ -2,9 +2,10 @@ const express = require('express')
 const { login } = require('../controller/user')
 const { SuccessMode, ErrorMode } = require('../models/resModel')
 // 1.创建一个路由容器
-const router = express.Router()
-// 2.把所有的路由都挂载到这个路由容器中
-router.post('/login', (req, res, next) => {
+const router = express.Router() // 2.把所有的路由都挂载到这个路由容器中
+router.get('/logins', (req, res, next) => {
+  console.log(req,'erq')
+  res.send('aaaaaaaaaaa')
   const { username, password } = req.body
   console.log(req.body)
   const result = login(username, password)
@@ -19,8 +20,7 @@ router.post('/login', (req, res, next) => {
     }
     res.json(
       new ErrorMode('登陆失败')
-    )
+      )
   })
 })
-
 module.exports = router

@@ -19,13 +19,15 @@ const seeionStore = new RedisStore({
   client: redisClient
 })
 app.use(session({
-  secret: 'wanglipin',
+  secret: 'wang_li_PIN1',
   cookie: {
     path: '/',//  不写也可以默认配置
     httpOnly: true, // 禁止客户端获取和修改cookie,不写也可以，默认配置
     maxAge: 24 * 60 * 60 *1000,
     store: seeionStore // 用redis存储session，如果不设置则存储到内存中
-  }
+  },
+  resave: true,
+  saveUninitialized: true 
 }))
 // 把路由挂载到 app服务中
 app.use('/', indexRouter);
